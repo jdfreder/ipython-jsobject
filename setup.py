@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
 try:
-    from ipythonpip import cmdclass
+    from jupyterpip import cmdclass
 except:
     import pip, importlib
-    pip.main(['install', 'ipython-pip']); cmdclass = importlib.import_module('ipythonpip').cmdclass
+    pip.main(['install', 'jupyter-pip']); cmdclass = importlib.import_module('jupyterpip').cmdclass
 
 setup(
     name='jsobject',
@@ -20,6 +20,6 @@ setup(
                  'License :: OSI Approved :: MIT License'],
     packages=['jsobject'],
     include_package_data=True,
-    install_requires=["ipython-pip"],
+    install_requires=["jupyter-pip"],
     cmdclass=cmdclass('jsobject', 'jsobject/backend_context'),
 )
